@@ -1,2 +1,3 @@
-# teste
-Repositório teste git hub
+# Repositório de teste
+## Diciplina programação front-end
+### Guilherme Antonio Barreiros
