@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Principais comandos do Git</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --panel: #f3f3f3;
+        --panel-2: #1f2937;
+        --text: #0c5dff;
+        --muted: #9ca3af;
+        --accent: #34d399;
+        --accent-2: #60a5fa;
+        --border: #374151;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #020817, var(--bg));
+        color: var(--text);
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px 20px 60px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 12px;
+        color: var(--accent);
+      }
+
+      .subtitle {
+        text-align: center;
+        color: var(--muted);
+        margin-bottom: 32px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: rgba(17, 24, 39, 0.9);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .card h2 {
+        margin-top: 0;
+        color: var(--accent-2);
+        font-size: 1.2rem;
+      }
+
+      .cmd {
+        display: block;
+        background: #0b1120;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        color: #d1fae5;
+        padding: 12px 14px;
+        margin: 12px 0 10px;
+        white-space: pre-wrap;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 0.92rem;
+      }
+
+      p {
+        color: var(--text);
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .note {
+        margin-top: 30px;
+        padding: 20px;
+        border-left: 4px solid var(--accent);
+        background: rgba(16, 185, 129, 0.08);
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Principais comandos do Git</h1>
+      <p class="subtitle">Guia rápido para iniciar, versionar e colaborar em projetos.</p>
+
+      <div class="grid">
+        <section class="card">
+          <h2>Inicialização</h2>
+          <span class="cmd">git init</span>
+          <p>Cria um repositório Git vazio na pasta atual.</p>
+
+          <span class="cmd">git clone &lt;url&gt;</span>
+          <p>Baixa uma cópia de um repositório remoto para o seu computador.</p>
+        </section>
+
+        <section class="card">
+          <h2>Configuração</h2>
+          <span class="cmd">git config --global user.name "Seu Nome"</span>
+          <p>Define o nome que aparecerá nos commits.</p>
+
+          <span class="cmd">git config --global user.email "seu@email.com"</span>
+          <p>Define o e-mail associado aos commits.</p>
+        </section>
+
+        <section class="card">
+          <h2>Trabalhando com arquivos</h2>
+          <span class="cmd">git status</span>
+          <p>Mostra o estado atual dos arquivos do repositório.</p>
+
+          <span class="cmd">git add &lt;arquivo&gt;</span>
+          <p>Adiciona arquivos modificados à área de staging.</p>
+
+          <span class="cmd">git add .</span>
+          <p>Adiciona todas as alterações da pasta atual para o staging.</p>
+        </section>
+
+        <section class="card">
+          <h2>Commit</h2>
+          <span class="cmd">git commit -m "Mensagem do commit"</span>
+          <p>Salva as alterações do staging com uma mensagem descritiva.</p>
+
+          <span class="cmd">git log</span>
+          <p>Exibe o histórico de commits do projeto.</p>
+        </section>
+
+        <section class="card">
+          <h2>Ramificações</h2>
+          <span class="cmd">git branch</span>
+          <p>Lista todas as branches do repositório.</p>
+
+          <span class="cmd">git checkout -b nome-da-branch</span>
+          <p>Cria e muda para uma nova branch.</p>
+
+          <span class="cmd">git checkout nome-da-branch</span>
+          <p>Troca para uma branch existente.</p>
+        </section>
+
+        <section class="card">
+          <h2>Sincronização</h2>
+          <span class="cmd">git pull</span>
+          <p>Busca e integra alterações do repositório remoto na branch atual.</p>
+
+          <span class="cmd">git push origin nome-da-branch</span>
+          <p>Envia commits locais para o repositório remoto.</p>
+        </section>
+
+        <section class="card">
+          <h2>Mesclagem e atualização</h2>
+          <span class="cmd">git merge nome-da-branch</span>
+          <p>Une alterações de outra branch na branch atual.</p>
+
+          <span class="cmd">git reset --hard HEAD</span>
+          <p>Descarta todas as alterações locais e volta ao último commit.</p>
+        </section>
+
+        <section class="card">
+          <h2>Repositórios remotos</h2>
+          <span class="cmd">git remote -v</span>
+          <p>Mostra os repositórios remotos configurados.</p>
+
+          <span class="cmd">git remote add origin &lt;url&gt;</span>
+          <p>Associa o repositório local a um repositório remoto.</p>
+        </section>
+      </div>
+
+      <div class="note">
+        <strong>Dica:</strong> use <code>git status</code> com frequência para acompanhar o que foi alterado e garantir que a branch e os commits estejam corretos antes de enviar o código.
+      </div>
+    </div>
+  </body>
+</html>
